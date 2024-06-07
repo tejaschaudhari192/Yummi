@@ -1,0 +1,10 @@
+.page404 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-img {
+    background-image: url('./404.png');
+}   

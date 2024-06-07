@@ -1,0 +1,72 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.restMenu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    padding: 40px 0;
+}
+
+.restaurant-info {
+    flex-basis: 40%;
+    margin-right: 20px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating-stars,.rating-count {
+    font-size: 1em;
+}
+
+.price {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cuisines {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.items-bold {
+    display: inline-block;
+}
+.restaurant-details {
+    flex-basis: 60%;
+}

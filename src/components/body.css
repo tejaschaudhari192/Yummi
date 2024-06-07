@@ -1,0 +1,11 @@
+hr {
+    border: 1px solid rgb(240, 240, 245);
+    margin: 50px 0;
+
+}
+
+#body-main {
+    max-width: 80%;
+    margin: auto;
+    
+}
