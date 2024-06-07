@@ -1,10 +1,12 @@
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
 import { ShimmerPostList } from "react-shimmer-effects";
 import { useEffect, useState } from 'react';
 
 export default function RestaurantList() {
 
     const [restaurantList, setRestaurantList] = useState([]);
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 
     useEffect(() => {
         // setRestaurantList(rests)
@@ -21,11 +23,11 @@ export default function RestaurantList() {
         // console.log(json);   
 
         setRestaurantList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
-        console.log(restaurantList);
+        // console.log(restaurantList);
     }
 
 
-    console.log(restaurantList);
+    // console.log(restaurantList);
 
     return restaurantList < 1 ? (
         <>

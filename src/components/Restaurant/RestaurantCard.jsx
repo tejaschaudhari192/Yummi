@@ -21,7 +21,7 @@ export default function RestaurantCard(props) {
             <div className="restro-image" style={{ backgroundImage: `url(${IMG_URL + props.rest?.info?.cloudinaryImageId})` }}>
                 {/* {console.log(props.rest.info.aggregatedDiscountInfoV3)} */}
                 <h2>
-                {OfferText(props)}
+                    {OfferText(props)}
                 </h2>
             </div>
             <div className="container">
@@ -35,4 +35,13 @@ export default function RestaurantCard(props) {
             </div>
         </div>
     );
+}
+// higher order components
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        <>
+            <label>promoted</label>
+            <RestaurantCard {...props} />
+        </>
+    }
 }
