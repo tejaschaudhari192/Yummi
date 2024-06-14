@@ -1,30 +1,9 @@
 import './items.css';
 
-// import Pizza from './../../assets/images/Items/Pizza.png';
-// import Burger from './../../assets/images/Items/Burger.png';
-// import Chinese from './../../assets/images/Items/Chinese.png';
-// import Dosa from './../../assets/images/Items/Dosa.avif';
-// import Momos from './../../assets/images/Items/Momos.png';
-// import Noodles from './../../assets/images/Items/Noodles.png';
-// import Biryani from './../../assets/images/Items/Biryani.png';
 import { useEffect, useState } from 'react';
 
 const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/';
 
-// const itemsArray = [
-//     Burger,
-//     Chinese,
-//     Noodles,
-//     Momos,
-//     Biryani,
-//     Dosa,
-//     Pizza,
-// ];
-
-var items;
-// function Item(){
-
-// }
 
 function Items() {
     const [items, setItems] = useState([]);
