@@ -6,7 +6,7 @@ export const AccordionItem = ({ title, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  console.log(data);
+  console.log(data[0]);
 
   return (
     <div className="border-b border-gray-200">
