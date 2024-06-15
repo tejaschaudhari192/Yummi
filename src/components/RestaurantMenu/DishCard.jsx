@@ -1,5 +1,3 @@
-import React from 'react';
-import { json } from 'react-router-dom';
 
 const DishCard = ({data}) => {
     const {name,price,offerTags} = data.card.info;
