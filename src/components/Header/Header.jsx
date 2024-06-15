@@ -3,13 +3,17 @@ import { TbDiscount2 } from "react-icons/tb";
 import { TbSearch } from "react-icons/tb";
 import { TbHelpOctagon } from "react-icons/tb";
 import { BsPerson } from "react-icons/bs";
-import { PiPerson, PiShoppingCartBold } from "react-icons/pi";
+import { PiShoppingCartBold } from "react-icons/pi";
 
 import logo from './../../assets/images/logo/logo.png';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../../utils/useOnlineStatus';
+import { UserContext } from '../../utils/UserContext';
+import { useContext } from 'react';
 
 function Header() {
+    const user = useContext(UserContext);
+
     return (
         <header>
             {/* <div className="header"> */}
@@ -39,7 +43,7 @@ function Header() {
                             <Link to='/contact'>About Us</Link></li>
                         <li>
                             <BsPerson size={15} />
-                            <Link href="#">Sign In</Link></li>
+                            <Link href="#">{user.loggedInUser}</Link></li>
                         <li>
                             <PiShoppingCartBold size={15} />
                             <Link href="#">Cart</Link></li>

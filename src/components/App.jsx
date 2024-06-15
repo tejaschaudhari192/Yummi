@@ -5,17 +5,28 @@ import Header from "./Header/Header";
 // import About from "./About/About";
 import Error from "./Error/Error";
 import RestaurantMenu from "./RestaurantMenu/RestaurantMenu";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { UserContext } from "../utils/UserContext";
 
 const About = lazy(() => import("./About/About"))
 
 function AppLayout() {
+  const [user, setUser] = useState("Defualt User");
+
+  useEffect(() => {
+    const user = {
+      name: "Tejas Chaudhari"
+    }
+    setUser(user.name);
+  }, []);
+
+
   return (
-    <div >
+    <UserContext.Provider value={{ loggedInUser: user, setUser }}>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </UserContext.Provider>
   )
 }
 
@@ -39,8 +50,8 @@ export const appRouter = createBrowserRouter(
           {
             path: '/contact',
             element: <Suspense fallback={<h1>Loading...</h1>}>
-            <About />
-          </Suspense > 
+              <About />
+            </Suspense >
           },
           {
             path: '/restaurants/:resId',

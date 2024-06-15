@@ -79,6 +79,8 @@ export default function RestsOnlineList(pr) {
                     value={searchText}
                     onChange={e => {
                         setSearchText(e.target.value);
+                        setFilteredList(filterData(searchText, restaurantList))
+
                     }}
                 />
 
@@ -91,6 +93,7 @@ export default function RestsOnlineList(pr) {
 
                 </button>
             </div>
+
 
 
 
