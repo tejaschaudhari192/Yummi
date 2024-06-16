@@ -73,9 +73,11 @@ export default function RestsOnlineList(pr) {
         <div className='restsOnline-block'>
             <h2 className='rest-heading'>Restaurants with online food delivery in Shirpur</h2>
 
-            <div className="search-box">
+            <div className="w-30 flex items-center border border-gray-300 rounded-lg overflow-hidden">
                 <input
-                    type="text" className="search-input" placeholder="Search.."
+                    type="text"
+                    placeholder="Search..."
+                    className="px-4 py-2 w-full focus:outline-none"
                     value={searchText}
                     onChange={e => {
                         setSearchText(e.target.value);
@@ -83,16 +85,16 @@ export default function RestsOnlineList(pr) {
 
                     }}
                 />
-
-                <button className="search-button">
-                    <FaSearch
-                        onClick={() => {
-                            setFilteredList(filterData(searchText, restaurantList))
-                        }}
-                    />
-
+                <button
+                    className="bg-blue-500 text-white px-4 py-2"
+                    onClick={() => {
+                        setFilteredList(filterData(searchText, restaurantList))
+                    }}>
+                    Search
                 </button>
             </div>
+
+
 
 
 
@@ -100,8 +102,8 @@ export default function RestsOnlineList(pr) {
             <div className='restsOnline-grid'>
 
                 {filteredList.map((rest, index) => {
-                    return <Link key={rest.info?.id} to={"/restaurants/"+rest.info?.id}>
-                        <RestaurantCard rest={rest}  />
+                    return <Link key={rest.info?.id} to={"/restaurants/" + rest.info?.id}>
+                        <RestaurantCard rest={rest} />
                     </Link>;
                 })}
             </div>

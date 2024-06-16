@@ -6,7 +6,7 @@ export const AccordionItem = ({ title, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  console.log(data[0]);
+  // console.log(data[0]);
 
   return (
     <div className="border-b border-gray-200">
@@ -18,10 +18,10 @@ export const AccordionItem = ({ title, data }) => {
       </h2>
       {isOpen &&
         <div className="p-4">
-        {data.map((item,index)=>{
-          return <DishCard key={index} data={item}/>
+          {data.map((item, index) => {
+            return <DishCard key={index} data={item} />
 
-        })}
+          })}
         </div>}
     </div>
   );

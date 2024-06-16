@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../../utils/useRestaurantMenu';
 import MenuAccordion, { AccordionItem } from './Category';
 import RestaurantInfo from './RestaurantInfo';
+import { list } from 'postcss';
 
 const RestaurantMenu = () => {
 
@@ -47,10 +48,12 @@ const RestaurantMenu = () => {
                     </div>
                     <h2>Menu</h2>
                     <div>
-                        {/* {restMenu.map((rest) => {
-                                return rest.card.info.name;
-                            })} */}
-                        <AccordionItem title={tiList[0].card.card.title} data={tiList[0].card.card.itemCards} />
+                        {
+                            tiList.map((list, index) => {
+                                return <AccordionItem key={index} title={list.card.card.title} data={list.card.card.itemCards} />
+
+                            })
+                        }
                     </div>
                 </div>
             </main>
