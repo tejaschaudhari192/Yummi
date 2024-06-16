@@ -1,14 +1,14 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Body from "./Body";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Footer from "./Footer";
+import Header from "./Header";
 // import About from "./About/About";
 import Error from "./Error/Error";
 import RestaurantMenu from "./RestaurantMenu/RestaurantMenu";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { UserContext } from "../utils/UserContext";
 
-const About = lazy(() => import("./About/About"))
+const About = lazy(() => import("./About"))
 
 function AppLayout() {
   const [user, setUser] = useState("Defualt User");

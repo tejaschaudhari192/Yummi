@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { UserContext } from "../../utils/UserContext";
+import { UserContext } from "../utils/UserContext";
 
 export default function About() {
-    const {setUser}=useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
     return (
         <>

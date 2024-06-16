@@ -1,4 +1,4 @@
-import Header from '../Header/Header'
+import Header from '../Header'
 // import { ShimmerCard } from 'react-shimmer-effects';
 
 import "./restMenu.css"
@@ -42,16 +42,16 @@ const RestaurantMenu = () => {
             <main>
                 <div className="restMenu-container">
                     <div className="restaurant-info">
-                        <RestaurantInfo info={restDetails}/>
-                        
+                        <RestaurantInfo info={restDetails} />
+
                     </div>
-                        <h2>Menu</h2>
-                        <div>
-                            {/* {restMenu.map((rest) => {
+                    <h2>Menu</h2>
+                    <div>
+                        {/* {restMenu.map((rest) => {
                                 return rest.card.info.name;
                             })} */}
-                            <AccordionItem title={tiList[0].card.card.title} data={tiList[0].card.card.itemCards} />
-                        </div>
+                        <AccordionItem title={tiList[0].card.card.title} data={tiList[0].card.card.itemCards} />
+                    </div>
                 </div>
             </main>
         </div>

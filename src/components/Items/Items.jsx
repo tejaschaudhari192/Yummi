@@ -1,9 +1,7 @@
-import './items.css';
 
 import { useEffect, useState } from 'react';
 
 const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/';
-
 
 function Items() {
     const [items, setItems] = useState([]);
@@ -26,20 +24,23 @@ function Items() {
 
     }
     return items.length > 1 ? (
-        <div className='items'>
+        <div className='items my-4'>
             <h1>
                 What in your mind ?
             </h1>
-            <div className='items-array'>
+            <div className='items-array flex gap-[2.46%] my-[1%] overflow-x-scroll overflow-y-hidden '>
 
                 {items.map((item, index) => {
-                    return <img key={index} width={144} height={180} src={IMG_URL + item.imageId} />
+                    return <img
+                        className='hover:scale-125 transition-all ease duration-200'
+                        key={index} width={144} height={180} src={IMG_URL + item.imageId}
+                    />
                 })}
 
             </div>
         </div>
     ) : (
-        <div className='items-loader-bg'>
+        <div className='flex justify-center flex-col items-center bg-black h-[300px] w-full'>
             <div className="lds-ripple">
                 <div>
                 </div>
