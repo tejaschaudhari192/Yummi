@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 hr {
     border: 1px solid rgb(240, 240, 245);
     margin: 50px 0;
@@ -121,6 +127,26 @@ nav a:hover {
     border-radius: 10px;
     font-size: 16px;
     text-align: center;
+}
+
+
+/* Scrollbar */
+
+#style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(210, 210, 210);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar {
+    background-color: #F5F5F5;
+    height: 5px;
+
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ff6f00;
 }
 
 
