@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react';
 import { ShimmerPostItem } from "react-shimmer-effects";
 
 import RestaurantCard from './RestaurantCard';
-// import { restsOnline, restsOnline } from './restsOnline';
-import './RestsOnline.css'
 import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-export default function RestsOnlineList(pr) {
+export default function RestsOnlineList() {
     const [searchText, setSearchText] = useState("");
     const [restaurantList, setRestaurantList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
@@ -22,11 +20,9 @@ export default function RestsOnlineList(pr) {
         const json = await result.json();
 
         const restsOnline = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-        // console.log(restsOnline);
 
         setRestaurantList(restsOnline)
         setFilteredList(restsOnline)
-        // console.log('effect rendered');
     }
 
     function filterData(searchText, restaurantList) {
@@ -37,31 +33,8 @@ export default function RestsOnlineList(pr) {
 
 
     return restaurantList < 1 ? (
-        <div className='restsOnline-block'>
-            <h2 className='rest-heading'>Restaurants with online food delivery in Shirpur</h2>
-
-            <div className="search-box">
-                <input
-                    type="text" className="search-input" placeholder="Search.."
-                    value={searchText}
-                    onChange={e => {
-                        setSearchText(e.target.value);
-                    }}
-                />
-
-                <button className="search-button">
-                    <FaSearch
-                        onClick={() => {
-                            setFilteredList(filterData(searchText, restaurantList))
-                        }}
-                    />
-
-                </button>
-            </div>
-
-
-
-            <div className='restsOnline-grid'>
+        <div>
+            <div className='grid grid-cols-4 gap-x-5'>
 
                 <ShimmerPostItem imageHeight={150} title text />
                 <ShimmerPostItem imageHeight={150} title text />
@@ -71,9 +44,9 @@ export default function RestsOnlineList(pr) {
         </div>
     ) : (
         <div className='restsOnline-block'>
-            <h2 className='rest-heading'>Restaurants with online food delivery in Shirpur</h2>
+            <h1 className='text-2xl mt-7'>Restaurants with online food delivery in Shirpur</h1>
 
-            <div className="w-30 flex items-center border border-gray-300 rounded-lg overflow-hidden">
+            <div className="w-30 my-10 flex items-center border border-gray-300 rounded-full overflow-hidden">
                 <input
                     type="text"
                     placeholder="Search..."
@@ -86,7 +59,7 @@ export default function RestsOnlineList(pr) {
                     }}
                 />
                 <button
-                    className="bg-blue-500 text-white px-4 py-2"
+                    className="bg-orange-500 text-white px-4 py-2"
                     onClick={() => {
                         setFilteredList(filterData(searchText, restaurantList))
                     }}>
@@ -94,12 +67,7 @@ export default function RestsOnlineList(pr) {
                 </button>
             </div>
 
-
-
-
-
-
-            <div className='restsOnline-grid'>
+            <div className='grid grid-cols-4 gap-x-5'>
 
                 {filteredList.map((rest, index) => {
                     return <Link key={rest.info?.id} to={"/restaurants/" + rest.info?.id}>

@@ -24,9 +24,9 @@ function Items() {
 
     }
     return items.length > 1 ? (
-        <div className='items my-4'>
-            <h1>
-                What in your mind ?
+        <div className='mt-24'>
+            <h1 className='text-2xl'>
+                What's in your mind ?
             </h1>
             <div className='items-array flex gap-[2.46%] my-[1%] overflow-x-scroll overflow-y-hidden '>
 
@@ -40,7 +40,7 @@ function Items() {
             </div>
         </div>
     ) : (
-        <div className='flex justify-center flex-col items-center bg-black h-[300px] w-full'>
+        <div className='my-24 flex justify-center flex-col items-center bg-black h-[300px]'>
             <div className="lds-ripple">
                 <div>
                 </div>

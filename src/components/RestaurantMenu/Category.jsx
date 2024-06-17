@@ -3,7 +3,7 @@ import { json } from 'react-router-dom';
 import DishCard from './DishCard';
 
 export const AccordionItem = ({ title, data }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
 
   // console.log(data[0]);

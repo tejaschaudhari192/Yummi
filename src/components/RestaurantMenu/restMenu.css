@@ -9,11 +9,7 @@ header {
     padding: 20px 0;
 }
 
-.restMenu-container {
-    max-width: 1000px;
-    margin: 0 auto;
 
-}
 
 header h1 {
     font-size: 2em;
@@ -38,10 +34,7 @@ main {
     padding: 40px 0;
 }
 
-.restaurant-info {
-    flex-basis: 40%;
-    margin-right: 20px;
-}
+
 
 .rating {
     display: flex;
@@ -49,7 +42,8 @@ main {
     margin-bottom: 10px;
 }
 
-.rating-stars,.rating-count {
+.rating-stars,
+.rating-count {
     font-size: 1em;
 }
 
@@ -66,6 +60,7 @@ main {
 .items-bold {
     display: inline-block;
 }
+
 .restaurant-details {
     flex-basis: 60%;
 }

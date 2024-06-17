@@ -1,6 +1,6 @@
 import useOnlineStatus from "../utils/useOnlineStatus.jsx";
 import Explore from "./Explore.jsx";
-import Items from "./Items/Items";
+import Items from "./Items";
 import RestaurantList from "./Restaurant/RestaurantList.jsx";
 import RestsOnlineList from "./Restaurant/RestsOnlineList.jsx";
 import './body.css'

@@ -1,45 +1,22 @@
 .restro-image {
-    border-radius: 20px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    width: inherit;
+
     height: 180px;
     text-align: center;
     position: relative;
     box-shadow: rgba(0, 0, 0, 1) 0px -50px 36px -28px inset;
-
-    & h2 {
-        position: absolute;
-        font-weight: bolder;
-        color: white;
-        text-transform: uppercase;
-        bottom: 3px;
-        left: 10px;
-    }
 }
 
-.rest-heading {
-    margin-bottom: 2%;
-}
 
-.card {
-    transition: 0.3s;
-    width: 280px;
-    height: 287px;
-}
 
-.card:hover {
-    scale: 0.93;
-}
 
 .desc,
 .city,
 .name {
-    line-height: 1;
+    line-height: 1.2;
     text-wrap: nowrap;
-    width: 70%;
-    overflow: hidden;
 }
 
 .desc,
@@ -48,13 +25,10 @@
 }
 
 .desc::after {
-    content: "...";
     display: inline-block;
 }
 
-.container {
-    padding: 2px 16px;
-}
+
 
 .restaurant-list {
     margin: 1% 0;

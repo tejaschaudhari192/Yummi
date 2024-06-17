@@ -1,9 +1,17 @@
+import { useDispatch } from "react-redux";
 import ExpandableText from "./Expandable";
+import { addItem } from '../../utils/store/cartSlice' // import it correctly
+
 
 const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/"
 
-
 const DishCard = ({ data }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addItem(item))
+
+  }
 
   const { name, price, defaultPrice, offerTags, imageId, description } = data.card.info;
   return (
@@ -38,7 +46,10 @@ const DishCard = ({ data }) => {
         >
         </div>
 
-        <button className="bg-white text-green-600 border-[1px] min-w-24 shadow-md px-4 py-2 rounded-lg font-semibold absolute -bottom-2">
+        <button
+          className="bg-white text-green-600 border-[1px] min-w-24 shadow-md px-4 py-2 rounded-lg font-semibold absolute -bottom-2"
+          onClick={() => handleAddToCart(data)}
+        >
           ADD
         </button>
       </div>

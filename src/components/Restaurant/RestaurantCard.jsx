@@ -1,11 +1,16 @@
-/* eslint-disable react/prop-types */
-
-
 import { FcRating } from "react-icons/fc";
 import './Restaurant.css'
 
 const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'
 
+function stringTruncate(cuisines, num) {
+    const cuisineString = cuisines.join(', ');
+    if (cuisineString.length <= num) {
+        return cuisineString;
+    }
+    return cuisineString.slice(0, num) + '...';
+
+}
 
 function OfferText(props) {
     return <>
@@ -15,25 +20,34 @@ function OfferText(props) {
     </>
 }
 export default function RestaurantCard(props) {
+    // const {rating} = props.rest;
+    const { name, cloudinaryImageId, cuisines, locality, rating } = props.rest?.info;
     return (
-        <div className="card">
-            {/* {console.log(props.rest?.info?.cloudinaryImageId)} */}
-            <div className="restro-image" style={{ backgroundImage: `url(${IMG_URL + props.rest?.info?.cloudinaryImageId})` }}>
-                {/* {console.log(props.rest.info.aggregatedDiscountInfoV3)} */}
-                <h2>
-                    {OfferText(props)}
-                </h2>
+        <div className="min-w-[260px] w-[260px]  h-[287px] transition-all ease-in-out duration-200 transform hover:scale-95 mb-5">
+            <div className="rounded-2xl shadow-xl">
+                <div className="restro-image rounded-2xl" style={{ backgroundImage: `url(${IMG_URL + cloudinaryImageId})` }}>
+                    <h1 className="absolute text-white font-extrabold text-2xl bottom-1 left-2">
+                        {OfferText(props)}
+                    </h1>
+                </div>
             </div>
-            <div className="container">
+            <div className="p-3">
+                <h1 className='name text-lg'>
+                    <b>
+                        {(name.length <= 30) ?
+                            name : (name.slice(0, 30) + '...')}
+                    </b>
+                </h1>
+                <p className="flex items-center">
+                    <FcRating size={18} />
+                    {rating} • {props.rest?.info?.sla.slaString}</p>
 
-                <h4 className='name'><b>{props.rest?.info?.name}</b></h4>
-                <p>
-                    <FcRating size={14} />
-                    {props.rest.rating} • {props.rest?.info?.sla.slaString}</p>
-                <p className='desc'>{props.rest?.info?.cuisines}</p>
-                <p className='city'>{props.rest.info?.locality}</p>
+                <p className='desc'>
+                    {stringTruncate(cuisines, 30)}
+                </p>
+                <p className='city'>{locality}</p>
             </div>
-        </div>
+        </div >
     );
 }
 // higher order components

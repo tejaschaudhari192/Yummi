@@ -5,9 +5,10 @@ import "./restMenu.css"
 import { FcRating } from 'react-icons/fc';
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../../utils/useRestaurantMenu';
-import MenuAccordion, { AccordionItem } from './Category';
+import { AccordionItem } from './Category';
 import RestaurantInfo from './RestaurantInfo';
 import { list } from 'postcss';
+import MenuSkeleton from './menuSkeleton';
 
 const RestaurantMenu = () => {
 
@@ -15,37 +16,28 @@ const RestaurantMenu = () => {
 
     const restInfo = useRestaurantMenu(resId);
 
-    if (restInfo == null) return <Header />;
+    if (restInfo == null) return <MenuSkeleton />;
 
     // console.log(restInfo);
 
     const tiList = restInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter((c) =>
         c?.card.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
-    const bakiList = restInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter((c) =>
-        c?.card.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")
-
-    // console.log(tiList);
-    // console.log(bakiList);
 
     const { avgRatingString, costForTwoMessage, areaName, sla } = restInfo.cards[2].card.card.info;
     const restMenu = tiList[0].card?.card.itemCards;
-    // console.log(restMenu);
 
     const restDetails = restInfo.cards[2].card.card.info;
-    // console.log(restDetails);
 
     return (
-        <div id='body-main'>
-            <p> Home/{restDetails.city}/{restDetails.name}</p>
+        <div className='mx-auto mt-24 w-3/5'>
+            <p className='mt-10'> Home/{restDetails.city}/{restDetails.name}</p>
 
-            <h1>{restDetails.name}</h1>
+            <h1 className='mt-3 text-2xl'>{restDetails.name}</h1>
             <main>
-                <div className="restMenu-container">
-                    <div className="restaurant-info">
-                        <RestaurantInfo info={restDetails} />
+                <div>
+                    <RestaurantInfo info={restDetails} />
 
-                    </div>
                     <h2>Menu</h2>
                     <div>
                         {

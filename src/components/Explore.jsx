@@ -1,6 +1,6 @@
 export default function Explore() {
     return <section className='mb-5'>
-        <h1>Best Restaurants in Bangalore</h1>
+        <h1 className="text-2xl mt-5">Best Restaurants in Bangalore</h1>
         <div className="grid grid-cols-4 gap-x-[30px] gap-y-[20px] p-[10px]">
 
             <div className="grid-item">Best Restaurants in Pune</div>
@@ -14,8 +14,8 @@ export default function Explore() {
             <div className="grid-item">Best Restaurants in Jaipur</div>
             <div className="grid-item">Best Restaurants in Nagpur</div>
         </div>
-        <hr />
-        <h1>Best Cuisines Near Me</h1>
+
+        <h1 className="text-2xl mt-5">Best Cuisines Near Me</h1>
         <div className="grid grid-cols-4 gap-x-[30px] gap-y-[20px] p-[10px]">
             <div className="grid-item">Chinese Restaurant Near Me</div>
             <div className="grid-item">South Indian Restaurant Near Me</div>

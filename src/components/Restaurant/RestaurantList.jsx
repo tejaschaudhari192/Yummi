@@ -31,13 +31,11 @@ export default function RestaurantList() {
 
     return restaurantList < 1 ? (
         <>
-            <h2 className='rest-heading'>Top Restaurants</h2 >
-
-                <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={1} gap={30} />
+            <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={1} gap={30} />
         </>
     ) : (
         <>
-            <h2 className='rest-heading'>Top Restaurants</h2 >
+            <h1 className='text-2xl m-b-[2%] mt-7'>Top Restaurants</h1 >
 
             <div className='restaurant-list scrollbar' id='style-1'>
 
