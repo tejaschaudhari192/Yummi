@@ -1,8 +1,6 @@
 import Header from '../Header'
 // import { ShimmerCard } from 'react-shimmer-effects';
 
-import "./restMenu.css"
-import { FcRating } from 'react-icons/fc';
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../../utils/useRestaurantMenu';
 import { AccordionItem } from './Category';

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { ShimmerPostItem } from "react-shimmer-effects";
 
 import RestaurantCard from './RestaurantCard';
-import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ShimmerRestaurantList from './ShimmerRestaurantList';
 
 export default function RestsOnlineList() {
     const [searchText, setSearchText] = useState("");
@@ -32,18 +32,8 @@ export default function RestsOnlineList() {
     }
 
 
-    return restaurantList < 1 ? (
-        <div>
-            <div className='grid grid-cols-4 gap-x-5'>
-
-                <ShimmerPostItem imageHeight={150} title text />
-                <ShimmerPostItem imageHeight={150} title text />
-                <ShimmerPostItem imageHeight={150} title text />
-                <ShimmerPostItem imageHeight={150} title text />
-            </div>
-        </div>
-    ) : (
-        <div className='restsOnline-block'>
+    return (
+        <>
             <h1 className='text-2xl mt-7'>Restaurants with online food delivery in Shirpur</h1>
 
             <div className="w-30 my-10 flex items-center border border-gray-300 rounded-full overflow-hidden">
@@ -67,15 +57,23 @@ export default function RestsOnlineList() {
                 </button>
             </div>
 
+            {restaurantList < 1 ? <>
+                <ShimmerRestaurantList />
+                <ShimmerRestaurantList />
+
+            </> : <></>
+
+            }
+
             <div className='grid grid-cols-4 gap-x-5'>
 
-                {filteredList.map((rest, index) => {
+                {filteredList.map((rest) => {
                     return <Link key={rest.info?.id} to={"/restaurants/" + rest.info?.id}>
                         <RestaurantCard rest={rest} />
                     </Link>;
                 })}
             </div>
-        </div>
+        </>
     );
 
 }

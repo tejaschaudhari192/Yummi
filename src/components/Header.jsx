@@ -20,7 +20,7 @@ function Header() {
     return (
 
         <header className="fixed top-0 left-0 w-full shadow-md h-20 bg-white z-50">
-            <div className="header-navbar w-4/5 flex justify-between m-auto items-center">
+            <div className="header-navbar w-4/5 flex justify-between m-auto items-center py-5">
                 <div className="flex items-center gap-12 flex-grow">
                     <Link to="/">
                         <img className="w-8 hover:scale-110 transition-transform" src={logo} alt="Logo" />

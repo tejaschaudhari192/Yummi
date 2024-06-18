@@ -1,6 +1,7 @@
 import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
 import { ShimmerPostList } from "react-shimmer-effects";
 import { useEffect, useState } from 'react';
+import ShimmerRestaurantList from './ShimmerRestaurantList';
 
 export default function RestaurantList() {
 
@@ -31,13 +32,16 @@ export default function RestaurantList() {
 
     return restaurantList < 1 ? (
         <>
-            <ShimmerPostList postStyle="STYLE_FOUR" col={3} row={1} gap={30} />
+            <h1 className='text-2xl m-b-[2%] mt-7'>Top Restaurants</h1 >
+
+            <ShimmerRestaurantList />
         </>
     ) : (
         <>
             <h1 className='text-2xl m-b-[2%] mt-7'>Top Restaurants</h1 >
 
-            <div className='restaurant-list scrollbar' id='style-1'>
+
+            <div className='restaurant-list' id='style-1'>
 
                 {restaurantList.map((rest, index) => {
                     return <RestaurantCard rest={rest} key={index + 34} />;
