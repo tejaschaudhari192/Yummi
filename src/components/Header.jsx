@@ -4,7 +4,7 @@ import { TbHelpOctagon } from "react-icons/tb";
 import { BsPerson } from "react-icons/bs";
 import { PiShoppingCartBold } from "react-icons/pi";
 
-import logo from './../assets/images/logo/logo.png';
+import logo from './../assets/images/logo/logo.svg';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import { UserContext } from '../utils/UserContext';
@@ -23,7 +23,7 @@ function Header() {
             <div className="header-navbar w-4/5 flex justify-between m-auto items-center py-5">
                 <div className="flex items-center gap-12 flex-grow">
                     <Link to="/">
-                        <img className="w-8 hover:scale-110 transition-transform" src={logo} alt="Logo" />
+                        <img className="w-8 scale-[2] hover:scale-150 transition-transform" src={logo} alt="Logo" />
                     </Link>
                     <h3 className="font-bold">Shirpur</h3>
                 </div>
@@ -42,7 +42,7 @@ function Header() {
                         </li>
                         <li className="flex items-center space-x-1">
                             <BsPerson size={15} />
-                            <Link to="#">{user.loggedInUser}</Link>
+                            <Link to="/contact">{user.loggedInUser}</Link>
                         </li>
                         <li className="flex items-center space-x-1">
                             <PiShoppingCartBold size={15} />

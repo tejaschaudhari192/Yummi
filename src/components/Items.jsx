@@ -3,6 +3,20 @@ import { useEffect, useState } from 'react';
 
 const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/';
 
+function ItemsShimmer() {
+    return (
+        <div className='mt-24 flex justify-center flex-col items-center bg-black h-[300px]'>
+            <div className="lds-ripple">
+                <div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <h1 className='items-loader-text'>Looking food near you...</h1>
+        </div>
+    )
+}
+
 function Items() {
     const [items, setItems] = useState([]);
     useEffect(() => {
@@ -18,15 +32,13 @@ function Items() {
 
         if (items.length == 0) {
             setItems(json.data.cards[0].card.card.imageGridCards.info);
-            // console.log(items); 
         }
-        // console.log('effect rendered');
 
     }
     return items.length > 1 ? (
         <div className='mt-24'>
             <h1 className='text-2xl'>
-                What's in your mind ?
+                What's in your mind?
             </h1>
             <div className='items-array flex gap-[2.46%] my-[1%] overflow-x-scroll overflow-y-hidden '>
 
@@ -39,18 +51,7 @@ function Items() {
 
             </div>
         </div>
-    ) : (
-        <div className='my-24 flex justify-center flex-col items-center bg-black h-[300px]'>
-            <div className="lds-ripple">
-                <div>
-                </div>
-                <div>
-                </div>
-            </div>
-            <h1 className='items-loader-text'>Looking food near you...</h1>
-
-        </div>
-    )
+    ) : <ItemsShimmer />
 }
 
 export default Items;

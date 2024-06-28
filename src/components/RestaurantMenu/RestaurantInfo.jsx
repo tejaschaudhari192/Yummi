@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FcRating } from 'react-icons/fc';
 
 const RestaurantInfo = ({ info }) => {
     const { name, avgRating, costForTwoMessage, cuisines, feeDetails } = info;
     const { lastMileTravel, slaString } = info.sla;
+    console.log("bhoju");
+
     return (
         <div className="p-4 rounded-lg  mx-auto">
             <div className="flex items-center justify-between mb-2">

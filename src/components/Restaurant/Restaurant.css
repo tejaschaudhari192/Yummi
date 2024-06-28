@@ -16,13 +16,9 @@
 .city,
 .name {
     line-height: 1.2;
-    text-wrap: nowrap;
 }
 
-.desc,
-.city {
-    opacity: 0.6;
-}
+
 
 .desc::after {
     display: inline-block;

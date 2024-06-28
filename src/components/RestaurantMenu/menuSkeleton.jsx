@@ -2,6 +2,8 @@ import React from 'react';
 import { ShimmerThumbnail, ShimmerText, ShimmerCircularImage } from 'react-shimmer-effects';
 
 const MenuSkeleton = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
     return (
         <div className="p-6 space-y-6 mt-32 w-3/5 mx-auto">
             {/* Breadcrumb */}

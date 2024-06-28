@@ -15,13 +15,11 @@ function stringTruncate(cuisines, num) {
 function OfferText(props) {
     return <>
         {props.rest.info.aggregatedDiscountInfoV3 ? props.rest.info.aggregatedDiscountInfoV3.header : ''}
-        {/* {console.log(props.rest.info.aggregatedDiscountInfoV3)} */}
-        {/* {props.rest.info.aggregatedDiscountInfoV3 ? props.rest.info.aggregatedDiscountInHoV3.subHeader : ''} */}
     </>
 }
 export default function RestaurantCard(props) {
-    // const {rating} = props.rest;
-    const { name, cloudinaryImageId, cuisines, locality, rating } = props.rest?.info;
+    const { name, cloudinaryImageId, cuisines, locality, avgRating } = props.rest?.info;
+
     return (
         <div className="min-w-[260px] w-[260px]  h-[287px] transition-all ease-in-out duration-200 transform hover:scale-95 mb-5">
             <div className="rounded-2xl shadow-xl">
@@ -31,21 +29,23 @@ export default function RestaurantCard(props) {
                     </h1>
                 </div>
             </div>
-            <div className="p-3">
-                <h1 className='name text-lg'>
+            <div className="p-3 text-[16px] text-nowrap">
+                <h1 className='name text-[18px]'>
                     <b>
                         {(name.length <= 30) ?
                             name : (name.slice(0, 30) + '...')}
                     </b>
                 </h1>
-                <p className="flex items-center">
+                <p className="flex items-center gap-1 font-bold">
                     <FcRating size={18} />
-                    {rating} • {props.rest?.info?.sla.slaString}</p>
+                    {avgRating} • {props.rest?.info?.sla.slaString}</p>
 
-                <p className='desc'>
-                    {stringTruncate(cuisines, 30)}
-                </p>
-                <p className='city'>{locality}</p>
+                <div className="font-semibold opacity-65">
+                    <p className='desc'>
+                        {stringTruncate(cuisines, 30)}
+                    </p>
+                    <p className='city'>{locality}</p>
+                </div>
             </div>
         </div >
     );

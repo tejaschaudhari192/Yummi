@@ -1,4 +1,4 @@
-import logo from './../assets/images/logo/logo.png';
+import logo from './../assets/images/logo/logo.svg';
 
 export default function Footer() {
     return (
@@ -6,8 +6,8 @@ export default function Footer() {
             <div className="max-w-[700px] mx-auto flex flex-wrap justify-between">
                 <div className="flex flex-wrap justify-between">
                     <div className="footer-col">
-                        <img src={logo} className='w-[50px]' alt="Swiggy logo" />
-                        <p className='opacity-70'>© 2024 Bundl Technologies Pvt. Ltd</p>
+                        <img src={logo} className='w-[50px]' alt="Yummi logo" />
+                        <p className='opacity-70'>© 2024 Teja's Bandwidth Pvt. Ltd</p>
                     </div>
                     <div className="footer-col">
                         <h3>Company</h3>
