@@ -14,7 +14,7 @@ function stringTruncate(cuisines, num) {
 
 function OfferText(props) {
     return <>
-        {props.rest.info.aggregatedDiscountInfoV3 ? props.rest.info.aggregatedDiscountInfoV3.header : ''}
+        {props.rest.info.aggregatedDiscountInfoV3 ? props.rest.info.aggregatedDiscountInfoV3.header+ props.rest.info.aggregatedDiscountInfoV3.subHeader : ''}
     </>
 }
 export default function RestaurantCard(props) {
