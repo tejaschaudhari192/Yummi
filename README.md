@@ -1,4 +1,4 @@
-#Yummi
+# Yummi
 
-##Enable cors from : Allow CORS extention
+### Enable cors from : Allow CORS extention
 ## See Live here : https://yummii.netlify.app/
